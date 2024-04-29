@@ -20,7 +20,7 @@ def countChar(s):
             print(i)
             break
 
-def second_highest_character(string):
+def n_highest_character(string, n ):
     character_count = {}
 
     for char in string:
@@ -29,21 +29,22 @@ def second_highest_character(string):
         else:
             character_count[char] = 1
 
-    print(character_count)
+    print(character_count)#{'h': 2, 'e': 1, 'l': 4, 'o': 2, ' ': 1, 'w': 1, 'r': 1, 'd': 1}
 
-    #sorted_counts = sorted(character_count.items(), key=lambda x: x[1], reverse=True)#[('l', 4), ('h', 2), ('o', 2), ('e', 1), (' ', 1), ('w', 1), ('r', 1), ('d', 1)]
-    sorted_counts = sorted(character_count.items(), key=lambda x:x[1],reverse=True)
+    print(character_count.values());
+    sorted_counts = sorted(character_count.items(), key=lambda x: x[1], reverse=True)#[('l', 4), ('h', 2), ('o', 2), ('e', 1), (' ', 1), ('w', 1), ('r', 1), ('d', 1)]
+    #Note ::: if x: x[1] sorts by  values, if x: x[1] , sorts by key if x: x[0]
     print(sorted_counts)
 
-    if len(sorted_counts) < 2:
+    if len(sorted_counts) < n:
         return None  # Not enough distinct characters
 
-    second_highest_char = sorted_counts[1]
+    second_highest_char = sorted_counts[n-1]#getting 2nd(nth) highest n-1
     return second_highest_char
 
 # Example usage:
 input_string = "hhelllo world"
-result = second_highest_character(input_string)
+result = n_highest_character(input_string,2)
 print(result)
 
 

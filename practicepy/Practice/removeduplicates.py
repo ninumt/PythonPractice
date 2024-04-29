@@ -1,5 +1,6 @@
 """"Remove duplicates from sorted or unsorted list"""
-
+from reverse import reverse
+print(reverse("ninu"))
 def removeDuplicates(nums):
         if not nums:#if len(nums)==0:
             return 0
